@@ -17,7 +17,8 @@ xlabel('STD');
 a(2)=a(1)+a(2);
 c=a(2:end)
 c=c/(sum(c));
+% Plot the normalized histogram
 bar(c)
 ylabel('percentage');
 xlabel('STD');
- axis([0 128 0 0.2]);
+axis([0 128 0 0.2]);

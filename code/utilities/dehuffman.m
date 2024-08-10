@@ -1,3 +1,4 @@
+%% DeHuffman
 function resSeq=dehuffman(messBits)
 
 elemBit=8;
@@ -8,6 +9,7 @@ elemBit=4;
 maxLenBit = bi2de(messBits(bitsRead+1:bitsRead+elemBit)');
 bitsRead=bitsRead+elemBit;
 dict = cell(symbolsNum,2);
+
 for ii=1:symbolsNum
     bitsLen = bi2de(messBits(bitsRead+1:bitsRead+maxLenBit)');
     bitsRead=bitsRead+maxLenBit;
@@ -16,6 +18,5 @@ for ii=1:symbolsNum
     dict(ii,2)={messBits(bitsRead+1:bitsRead+bitsLen)'};
     bitsRead=bitsRead+bitsLen;
 end
-% dict
-% messBits(bitsRead+1:end)
+
 resSeq = huffmandeco(messBits(bitsRead+1:end),dict)';

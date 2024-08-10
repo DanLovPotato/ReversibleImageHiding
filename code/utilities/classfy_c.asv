@@ -1,0 +1,37 @@
+%% Ensure that there are no duplicate elements across different classes
+function [class] = classfy_c(sb, cls_L, KM)
+% CLASSFY_C Classifies elements into KM classes based on sorted indices
+%   [class] = CLASSFY_C(sb, cls_L, KM) sorts the elements of sb and
+%   assigns them to KM classes based on the lengths specified in cls_L.
+%   The function returns the class matrix, where each row corresponds
+%   to a class containing sorted indices of elements.
+
+    % Initialize a zero matrix sr of the same size as sb
+    sr = zeros(size(sb));
+
+    % Sort sb and get the sorted indices in sr
+    [sb, sr] = sort(sb);
+    vector_L = length(sr);  % Get the length of the sorted vector
+    
+    % Initialize the class matrix with KM rows and a number of columns
+    % that is half of vector_L plus 100 (to accommodate larger classes)
+    class = zeros(KM, vector_L/2 + 100);
+
+    % Variable to track the current position in sr
+    all = 0;
+
+    % Loop over each class to assign sorted elements
+    for i = 1:KM
+        % Extract the next cls_L(i) elements from sr
+        temp = sr(all + 1:all + cls_L(i));
+        
+        % Sort the extracted elements
+        temp = sort(temp);
+        
+        % Assign the sorted elements to the current class
+        class(i, 1:cls_L(i)) = temp;
+        
+        % Update the all variable to move to the next position in sr
+        all = all + cls_L(i);
+    end
+end

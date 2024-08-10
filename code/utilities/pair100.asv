@@ -37,4 +37,8 @@ end
 %     [transform_rmse(i), stego_rmse(i), class_bits, bpp(i)] = transform(ss, cc, 10, 10);
 % end
 
+% Note:
+% - Ensure that the 'transform' function is available in your MATLAB path.
+% - Update the directory path to the actual location of your image database.
+% - Parallel processing requires the Parallel Computing Toolbox.
 

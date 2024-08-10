@@ -1,6 +1,6 @@
+%% This function divides data into K clusters and returns the index of each cluster and its center.
 function [class_index,class_L]=K_means(SD,K)
-    % This function divides data into K clusters and returns the index of each cluster and its center.
-
+    
     class_L = zeros(K, 1);
     class_index_temp = cell(K, 1);
     class_index = cell(K, 1);
@@ -32,4 +32,5 @@ function [class_index,class_L]=K_means(SD,K)
 
     save('matfiles/class_index.mat', 'class_index');
     save('matfiles/class_L.mat', 'class_L');
+
 end
