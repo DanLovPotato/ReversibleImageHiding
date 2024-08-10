@@ -6,21 +6,23 @@ Traditional image encryption methods typically involve transforming an image int
 
 To address this issue, this method takes a different approach by encrypting the image into another visually meaningful image. By transforming the secret image into an innocuous-looking target image, this technique minimizes the chances of drawing attention to the encrypted content. The resulting image appears normal and unremarkable, making it less likely to be suspected of containing hidden information. 
 
+
+
 ## Project Structure
 
+```txt
 project_directory/
-│
-├── code/                        # Directory containing the main script and all relevant functions
-│   ├── **main.m**              # Main script to run the entire pipeline
-│   ├── matfiles/             # Stores all intermediate `.mat` files generated during the image processing steps.
-│   ├── RDH/                   # Contains functions related to reversible data hiding, such as `embedding.m`, `LSB.m`, `Sachnev.m`, etc. 
-│   ├── utilities/              #  Contains general utility functions like `appraise.m`, `K_means.m`, and `huffman.m` 
-│
-├── data/                        #  Input data 
-│
-├── results/                    # Output results
-│
-└── README.md           # Project doc
+├── code/          # Directory containing the main script and all relevant functions
+│   ├── main.m     # Main script to run the entire pipeline
+│   ├── matfiles/  # Stores all intermediate .mat files generated during the image processing steps.
+│   ├── RDH/       # Contains functions related to reversible data hiding, such as embedding.m, LSB.m, Sachnev.m, etc.
+│   └── utilities/ # Contains general utility functions like appraise.m, K_means.m, and huffman.m
+├── data/          # Input data
+├── results/       # Output results
+└── README.md      # Project doc
+```
+
+
 
 ## Outputs
 
